@@ -309,7 +309,11 @@
      ;; regardless of license status.
      :saml   (setting/get :saml-enabled)
      :jwt    (setting/get :jwt-enabled)
-     :oidc   (setting/get :oidc-enabled)
+     ;; `oidc-oss-enabled` is this fork's OIDC login (see [[metabase.sso.oidc.oss.config]]). Neither
+     ;; setting is guaranteed to exist -- EE settings aren't registered in an OSS build, and
+     ;; `setting/get` throws on an unknown setting -- so check before reading.
+     :oidc   (some #(when (setting/registered? %) (setting/get %))
+                   [:oidc-oss-enabled :oidc-enabled])
      :slack  (setting/get :slack-connect-enabled)
      :scim   (setting/get :scim-enabled)
      ;; Unknown sso_source -- treat as disabled to allow password reset

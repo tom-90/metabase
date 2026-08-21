@@ -2197,6 +2197,7 @@
               metabase.sso.api.slack-connect
               metabase.sso.core
               metabase.sso.init
+              metabase.sso.oidc.oss.api
               metabase.sso.settings}
    :friends #{enterprise/sso}
    :uses    #{api
@@ -2209,7 +2210,7 @@
               settings
               system
               util}
-   :model-imports #{:model/AuthIdentity :model/PermissionsGroupMembership}}
+   :model-imports #{:model/AuthIdentity :model/PermissionsGroup :model/PermissionsGroupMembership}}
 
   staleness
   {:team "UX West"

@@ -318,6 +318,7 @@ export const createMockSettings = (
   "ldap-user-filter": null,
   "ldap-user-provisioning-enabled?": false,
   "oidc-user-provisioning-enabled?": true,
+  "oidc-oss-enabled": false,
   "ldap-attribute-email": null,
   "ldap-attribute-firstname": null,
   "ldap-attribute-lastname": null,

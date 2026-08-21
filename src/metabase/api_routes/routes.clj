@@ -59,6 +59,7 @@
    [metabase.settings-rest.api]
    [metabase.setup-rest.api]
    [metabase.sso.api]
+   [metabase.sso.oidc.oss.api]
    [metabase.sync.api]
    [metabase.task-history.api]
    [metabase.testing-api.api]
@@ -213,6 +214,7 @@
    "/notification"         metabase.notification.api/notification-routes
    "/notify"               (+static-apikey metabase.sync.api/notify-routes)
    "/oauth"                (+auth 'metabase.oauth-server.api.admin)
+   "/oidc-oss"             'metabase.sso.oidc.oss.api
    "/osi"                  {"/ai-context" (+auth 'metabase.osi.ai-context.api)}
    "/permissions"          (+auth 'metabase.permissions-rest.api)
    "/persist"              (+auth 'metabase.model-persistence.api)
